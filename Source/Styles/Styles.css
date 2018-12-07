@@ -1,0 +1,77 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body
+{
+    overflow: hidden;
+}
+
+canvas{
+    background: #111;
+    width: 100vw;
+    height: 100vh;
+}
+
+input[type="text"]{
+    background: steelblue;
+    color: #222;
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 18px 45px;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 0px 15px -2px #111;
+    transition: ease-in-out 0.12s;
+}
+
+input[type="text"]:hover
+{
+    background: slategrey;
+    color: #111;
+    box-shadow: 0 0 0 0 #111;
+}
+
+input[type="text"]:focus
+{
+    background: #333;
+    color: slategrey;
+    box-shadow: 0 0 0 0 #111;
+}
+
+input[type="checkbox"]{
+    background: steelblue;
+    color: #222;
+    font-size: 20px;
+    padding: 18px 45px;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 0px 15px -2px #111;
+    transition: ease-in-out 0.12s;
+}
+
+.content-centered{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.fixed-bottom{
+    position: fixed;
+    bottom: 8%;
+    left: 0;
+    width: 100%;
+}
+
+@media only screen and (max-width:500px)
+{
+    input[type="text"]{
+        padding: 8px 25px;
+    }
+}
