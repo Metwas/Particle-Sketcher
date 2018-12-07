@@ -1,6 +1,6 @@
 /*
         Code by: Metwas,
-        Description: Particle text animation,
+        Description: Particle text sketcher,
         Date: 06/12/18
  */
 
