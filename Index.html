@@ -2,18 +2,59 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Text Animation</title>
+    <title>Particle Sketcher [Font & photo sketcher]</title>
     <link rel="stylesheet" href="Source/Styles/Styles.css" />
 </head>
 
 <body>
-    <!-- Canvas -->
-    <canvas id="canvas"></canvas>
-    <div class="content-centered fixed-bottom">
-        <input id="input" type="text" value="Hello sololearn!" />
+    <!-- Main content and canvas container -->
+    <div class="content-wrapper">
+        <div id="main" class="body-content">
+
+            <!-- Canvas -->
+            <canvas id="canvas"></canvas>
+
+            <!-- Control container -->
+            <div id="control-container">
+
+                <!-- Font sketcher container -->
+                <div id="text-controls" class="content-centered fixed-bottom display-none">
+                    <p>Now with emoticon color support</p>
+                    <input id="input" type="text" value="😀🐝🐦"/>
+                </div>
+
+                <!-- Photo sketcher container -->
+                <div id="image-controls" class="content-centered fixed-bottom display-none">
+                    <p>Load a photo from your device</p>
+                    <label class="file-label" for="file-input">Open</label>
+                    <input name="file-input" accept="image/*" id="file-input" type="file" onchange="handleFile(this)"/>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Menu container -->
+    <div id="menu-container" class="menu-container">
+        <ul class="menu-items">
+            <li>Particle Sketcher 🎨</li>
+            <li data-name="text" onclick="refreshUIElements(this)">Text sketcher</li>
+            <li data-name="image" onclick="refreshUIElements(this)">Image sketcher</li>
+            <li data-name="painter" onclick="refreshUIElements(this)">Painter (Coming soon)</li>
+            <li>Code by Metwas seup</li>
+        </ul>
+    </div>
+
+    <!-- navigation container -->
+    <div class="navbar-top">
+        <div id="burger-link" class="burger-link-container" onclick="toggleMenu(this,true)">
+            <div class="bar bar-one"></div>
+            <div class="bar bar-two"></div>
+            <div class="bar bar-three"></div>
+        </div>
+    </div>
+    <!-- Scripts -->
     <script type="text/javascript" src="Scripts/Text.js"></script>
 </body>
 
