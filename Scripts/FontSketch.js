@@ -1,3 +1,4 @@
+
 /**
 * @summary This will draw any text on the canvas using particles
 * @param {Number} name The unique name for the sketch
@@ -17,15 +18,18 @@ FontSketch.prototype.initialize = function () {
     windowWidth = canvas.width = window.innerWidth;
     windowHeight = canvas.height = window.innerHeight;
     alphaThreshold = 255;
-
+var _radius = 0;
     // by having a resolution set, we can skip a few rows which increases performance
     if (windowWidth >= 1200) {
         resolution = 140;
+        _radius = windowWidth * 0.004;
     }
     else if (windowWidth <= 1200 && windowWidth >= 700) {
         resolution = 100;
+        _radius = windowWidth * 0.006;
     } else {
         resolution = 85;
+        _radius = windowWidth * 0.007;
     }
 
     var _addition = Math.round(windowWidth / resolution);
@@ -56,7 +60,7 @@ FontSketch.prototype.initialize = function () {
             // Only then obtain the pixels which alpha value is greater or equal to the variable threshold
             if (_alpha >= alphaThreshold) {
                 var _pixel = createPixelFromCoordinates(i, j, windowWidth, _data);
-                var _particle = new Particle(i, j, windowWidth / 2, windowHeight / 2, window.innerWidth * 0.005);
+                var _particle = new Particle(i, j, windowWidth / 2, windowHeight / 2, _radius);
                 _particle.color = _pixel.toRGBAString();
                 particles.push(_particle);
             }
