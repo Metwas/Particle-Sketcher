@@ -1,3 +1,29 @@
+//==================================================================== Global definitions ====================================================================//
+
+var canvas = {},
+    ctx = {};
+
+var windowWidth = window.innerWidth,
+    windowHeight = window.innerHeight;
+
+var canvasWidth = windowWidth,
+    canvasHeight = windowHeight;
+
+var mouse = { x: 0, y: 0 };
+
+var particles = [];
+var particleCount = 0;
+var resolution = 180;
+var alphaThreshold = 255;
+var sketches = [];
+var currentSketch = {};
+
+var input = document.getElementById("input"),
+    mainContent = document.getElementById("main"),
+    burgerLink = document.getElementById("burger-link"),
+    menu = document.getElementById("menu-container"),
+    controlContainer = document.getElementById("control-container");
+
 //==================================================================== Event handlers =================================================================================//
 
 /**
@@ -255,6 +281,7 @@ function initializeImageSketchFromFile(file) {
     }
 }
 
+
 //==================================================================== Extension functions =================================================================================//
 
 /**
@@ -356,7 +383,6 @@ function mousLeaveMenu() {
     burgerLink.classList.remove("menu-hover");
 }
 
-
 /**
   * @summary Handles the file that has been uploaded by the user
   * @param {HTMLElement} element The html element container holding the file
@@ -419,7 +445,6 @@ function loadSketch(elementOrSketchName, reloadMenu) {
     return false;
 }
 
-
 /**
   * @summary Loads the sketch, but this will mainly be called from the UI
   * @param {HTMLElement} element The html element that called this function
@@ -428,7 +453,6 @@ function refreshUIElements(element) {
     // set the second parameter to true to hide the menu after sketch selection
     loadSketch(element, true);
 }
-
 
 /**
   * @summary Switches the controls depending on which sketch is being shown
