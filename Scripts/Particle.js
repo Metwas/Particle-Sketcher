@@ -12,7 +12,7 @@
     this.accX = 0;
     this.accY = 0;
 
-    this.setRadius(2, radius);
+    this.setRadius(radius/1.5, radius);
     this.friction = random(0.8, 0.98);
     this.strength = random(50, 90);
 
@@ -107,7 +107,7 @@ Particle.prototype.pushFromPoint = function (pointX, pointY, radius) {
 * @param {Number} max The maximum radius amount
 */
 Particle.prototype.setRadius = function (min, max) {
-    min = min || 1;
-    max = max || windowWidth * 0.005;
+    min = min || max/1.5;
+    max = max || min*1.5;
     this.radius = random(min, max);
 };
