@@ -259,7 +259,7 @@ ImageSketch.prototype.initialize = function () {
 
 
 /**
-* @summary [Overridden] The main animation sketch per request frame
+* @summary [Overridden] The main sketch per request frame
 */
 ImageSketch.prototype.update = function () {
     this.context.clearRect(0, 0, canvas.width, canvas.height);
